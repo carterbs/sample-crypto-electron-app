@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Photon</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/photon.css">
+
+    <!-- Javascript -->
+    <script src="../js/vue.js" charset="utf-8"></script>
+
+  </head>
+  <body>
+    <div class="window"  id="app">
+
+      <!-- .toolbar-header sits at the top of your app -->
+      <header class="toolbar toolbar-header">
+        <h1 class="title">Message Text</h1>
+      </header>
+
+      <!-- Your app's content goes inside .window-content -->
+      <div class="window-content">
+        <div class="pane-group">
+          <div class="pane pane-sm sidebar">
+            <nav class="nav-group">
+              <h5 class="nav-group-title">Mode</h5>
+              <span @click="setMode('encrypt')" class="nav-group-item" v-bind:class="{'active':mode=='encrypt'}">
+                <span class="icon icon-home"></span>
+                Encrypt
+              </span>
+              <span  @click="setMode('decrypt')"  class="nav-group-item" v-bind:class="{'active':mode=='decrypt'}">
+                <span class="icon icon-light-up"></span>
+                Decrypt
+              </span>              
+            </nav>
+          </div>
+
+          <div class="pane main-pane" v-show="mode=='encrypt'">
+            <form>
+              <div class="form-group">
+                <label>Keyword</label>
+                <input type="text" class="form-control" placeholder="Keyword" v-model="keyword">
+              </div>              
+              <div class="form-group">
+                <label>Text to {{mode}}</label>
+                <textarea @keyup="handleKeyup" class="form-control" rows="3" v-model="messageText"></textarea>
+              </div>              
+            </form>
+          </div>
+          <div class="pane" v-show="mode=='decrypt'">
+            <h2>@Todo. Go to github and grab the code!</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/index.js" charset="utf-8"></script>
+  </body>
+</html>

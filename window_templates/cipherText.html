@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cipher Text</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/photon.css">
+
+    <!-- Javascript -->
+    <script src="../js/vue.js" charset="utf-8"></script>
+
+  </head>
+  <body>
+    <div class="window"  id="app">
+
+      <!-- .toolbar-header sits at the top of your app -->
+      <header class="toolbar toolbar-header">
+        <h1 class="title">Cipher Text</h1>
+      </header>
+
+      <!-- Your app's content goes inside .window-content -->
+      <div class="window-content">
+          <div class="pane main-pane">
+            <form>                            
+              <div class="form-group">
+                <textarea class="form-control" rows="3" v-model="cipherText"></textarea>
+              </div>              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/cipherText.js" charset="utf-8"></script>
+  </body>
+</html>
